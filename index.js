@@ -14,7 +14,7 @@ app.use(
     cors({
         credentials: true,
         allowedHeaders: ['Content-Type', 'Authorization'],
-        origin: ['https://video-app-mqq9.onrender.com']
+        origin: ['https://video-app-axdk.onrender.com']
     })
 );
 
