@@ -3,8 +3,6 @@ import cors from 'cors';
 import dotenv from 'dotenv';
 import express from 'express';
 import mongoose from 'mongoose';
-import path from 'path';
-import url from 'url';
 import AuthRoute from './routes/auth.js';
 import CommentRoutes from './routes/comments.js';
 import UserRoutes from './routes/users.js';
@@ -16,7 +14,7 @@ app.use(
     cors({
         credentials: true,
         allowedHeaders: ['Content-Type', 'Authorization'],
-        origin: ['https://video-app-mqq9.onrender.com', '*']
+        origin: ['https://video-app-mqq9.onrender.com']
     })
 );
 
