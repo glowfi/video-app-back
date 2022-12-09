@@ -10,8 +10,17 @@ import CommentRoutes from './routes/comments.js';
 import UserRoutes from './routes/users.js';
 import VideoRoutes from './routes/videos.js';
 
-const __filename = url.fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
+// const __filename = url.fileURLToPath(import.meta.url);
+// const __dirname = path.dirname(__filename);
+
+import cors from 'cors';
+app.use(
+    cors({
+        credentials: true,
+        allowedHeaders: ['Content-Type', 'Authorization'],
+        origin: ['https://video-app-mqq9.onrender.com', '*']
+    })
+);
 
 // const PORT =
 const app = express();
@@ -39,14 +48,14 @@ app.use((err, req, res, next) => {
     });
 });
 
-const filename = url.fileURLToPath(import.meta.url);
-const dirname = path.dirname(filename);
+// const filename = url.fileURLToPath(import.meta.url);
+// const dirname = path.dirname(filename);
 
-app.use(express.static(path.join(dirname, '/client/build')));
+// app.use(express.static(path.join(dirname, '/client/build')));
 
-app.get('*', (req, res) => {
-    res.sendFile(path.join(dirname, '/client/build', 'index.html'));
-});
+// app.get('*', (req, res) => {
+//     res.sendFile(path.join(dirname, '/client/build', 'index.html'));
+// });
 
 app.listen(process.env.PORT || 3001, '0.0.0.0', () => {
     // Connect to Atlas
